@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "oWpWWMVWQQJZn0MZe7KPn34lkrbFs/7zURfAcHgf+pmfdvjPmOKyGJ/jmmmyEw3rRIc/tjtFHSr66ZicMzJAMg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\barte\\source\\repos\\SSQEUpdater\\SSQEUpdater\\SSQEUpdater.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\barte\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.6\\microsoft.netcore.app.runtime.win-x64.5.0.6.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.6\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.6.nupkg.sha512",
+    "C:\\Users\\barte\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.6\\microsoft.aspnetcore.app.runtime.win-x64.5.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}
