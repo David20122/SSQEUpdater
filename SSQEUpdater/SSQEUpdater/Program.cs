@@ -94,7 +94,7 @@ namespace SSQEUpdater
                 ZipFile.ExtractToDirectory(file, path, true);
 
                 Write("+", "editor updated, launching");
-                Process.Start("Sound Space Quantum Editor");
+                Process.Start("Sound Space Quantum Editor", string.Join(" ", args));
 
                 File.Delete(file);
 
