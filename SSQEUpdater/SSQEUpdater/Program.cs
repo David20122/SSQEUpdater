@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
@@ -91,7 +92,24 @@ namespace SSQEUpdater
                 Console.Write("\n");
                 Write("+", "downloaded, extracting\n");
                 string file = newVersionString + ".zip";
-                ZipFile.ExtractToDirectory(file, path, true);
+
+                using (ZipArchive archive = ZipFile.OpenRead(file))
+                {
+                    var result = from currEntry in archive.Entries
+                                 where !String.IsNullOrEmpty(currEntry.Name)
+                                 select currEntry;
+
+
+                    foreach (ZipArchiveEntry entry in result)
+                    {
+                        try
+                        {
+                            Directory.CreateDirectory(Path.GetDirectoryName(Path.Combine(path, entry.FullName)));
+                            entry.ExtractToFile(Path.Combine(path, entry.FullName), entry.FullName.Contains(".exe"));
+                        }
+                        catch { }
+                    }
+                }
 
                 Write("+", "editor updated, launching");
                 Process.Start("Sound Space Quantum Editor", args.Length > 0 ? string.Join(" ", args) : "");
